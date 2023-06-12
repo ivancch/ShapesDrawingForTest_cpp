@@ -16,6 +16,13 @@ private:
 	float m_b;
 	float m_c;
 public:
+	/**
+	 *
+	 * @param[in] a First side of the triangle.
+	 * @param[in] b Second side of the triangle.
+	 * @param[in] c Third side of the triangle.
+	 * @param[in] point1 Coordinates to start drawing the triangle.
+	 */
 	Triangle (const float a, const float b, const float c, Point2D *point1) :
 		Shape(point1)
 	{
@@ -35,6 +42,13 @@ public:
 		}
 	}
 
+	/**
+	 * Drawing a triangle from a given coordinate point.
+	 * First to the right, then up, then to the initial coordinates.
+	 *
+	 * The sides of the triangle are specified
+	 * in the constructor when the object is created.
+	 */
 	void drow() const override
 	{
 		//Create context and pen.
