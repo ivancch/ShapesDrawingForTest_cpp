@@ -3,7 +3,14 @@
 // Author      : ivan-ch
 // Version     : 0.0.1
 // Copyright   :
-// Description : Drawing shapes for test assignment in C++
+// Description : Drawing shapes for test assignment in C++.
+//
+// 				 To correctly compile the code, you need to add "-lgdi32"
+//				 to the end for the linker. The code will only compile
+//				 on Windows due to the use of the Windows API.
+//
+//				 To complicate the example from the windowsAPI,
+//				 only drawing straight lines was used.
 //============================================================================
 
 /**
@@ -20,9 +27,9 @@
  */
 #include <iostream>
 #include <conio.h>
-#include <windows.h>
 
 #include "shapes/Triangle.h"
+#include "shapes/Rectangle.h"
 #include "Point2D.h"
 
 int main(int argc, char *argv[])
@@ -33,9 +40,16 @@ int main(int argc, char *argv[])
 	// creating and drawing objects. 2 milliseconds.
 	Sleep(2);
 
-	Shape* tr1 = new Triangle(100, 120, 180, new Point2D(200, 200));
-	tr1->drow();
-	if(tr1) delete tr1;
+//	Shape *tr1 = new TriangleDemo(100, 120, 180, new Point2D(200, 200));
+//	tr1->drow();
+//	if(tr1) delete tr1;
+
+	Shape *re1 = new RectangleDemo(80, 120, new Point2D(200,200));
+	re1->drow();
+	if(re1) delete re1;
+
+//	Rectangle
+
 
 
 	std::cout << "end test!" << std::endl;

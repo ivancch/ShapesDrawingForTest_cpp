@@ -24,10 +24,10 @@ public:
 
 	}
 
-	float getX() { return m_x; }
+	float getX() const{ return m_x; }
 	void setX(float x) { m_x = x; }
 
-	float getY() { return m_y; }
+	float getY() const { return m_y; }
 	void setY(float x) { m_y = x; }
 
 	/**

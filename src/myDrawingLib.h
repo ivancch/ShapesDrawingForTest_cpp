@@ -3,7 +3,7 @@
 #ifndef SHAPES_MYDRAWINGLIB_H_
 #define SHAPES_MYDRAWINGLIB_H_
 
-#include <Windows.h>
+#include <windows.h>
 
 namespace myDrawingLib
 {
