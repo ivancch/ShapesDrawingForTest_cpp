@@ -21,7 +21,6 @@ protected:
 	Shape(Point2D *point) :
 		m_coordinates(point)
 	{
-//		id++;
 	}
 
 public:
@@ -44,7 +43,7 @@ public:
 	 */
 	friend std::ostream& operator<<(std::ostream &out, const Shape &shape)
 	{
-		return out << "shape coordinates " << *shape.m_coordinates;
+		return out << "coordinates " << *shape.m_coordinates;
 	}
 };
 

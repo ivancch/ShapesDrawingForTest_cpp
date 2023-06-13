@@ -4,9 +4,40 @@
 #define SHAPES_MYDRAWINGLIB_H_
 
 #include <windows.h>
+#include <vector>
+#include <cmath>
+
+/**
+ * The definition of pi, since such a definition was not in my compiler.
+ */
+#ifndef M_PI
+#define M_PI (4*std::atan(1))
+#endif /* M_PI */
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+
+
+
+
+
+
+
+
+
 
 namespace myDrawingLib
 {
+
 	/**
 	 * This class is intended to return a handle to the console window, with a drawing context
 	 * already created and a white non-transparent pen selected.
@@ -32,10 +63,25 @@ namespace myDrawingLib
 		 * 				 the console associated with the calling process or
 		 * 				 NULL if there is no such associated console.
 		 */
-		HDC& getHDC();
+		const HDC& getHDC() const ;
 
 		virtual ~Context();
 	};
+
+	/**
+	 * The function iterates through all the elements of the vector
+	 * and calls the draw() function on each element.
+	 * Please use this function only for classes that implement
+	 * the "Shape" interface class.
+	 *
+	 * @tparam T type
+	 * @param vec Vector
+	 */
+
+
+	template<typename T>
+	void drawAllElements(const std::vector<T> &vec);
+
 
 }
 

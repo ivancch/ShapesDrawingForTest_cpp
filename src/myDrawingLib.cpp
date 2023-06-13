@@ -18,7 +18,20 @@ myDrawingLib::Context::~Context()
 	DeleteObject(m_pen);     // Delete the created pen
 }
 
-HDC& myDrawingLib::Context::getHDC()
+const HDC& myDrawingLib::Context::getHDC() const
 {
 	return m_hdc;
+}
+
+
+#include <iostream>
+
+template<typename T>
+void myDrawingLib::drawAllElements(const std::vector<T> &vec)
+{
+	for (const T &element : vec)
+	{
+		std::cout << *element << '\n';
+	}
+		std::cout << '\n';
 }

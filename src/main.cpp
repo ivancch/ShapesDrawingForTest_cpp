@@ -27,10 +27,14 @@
  */
 #include <iostream>
 #include <conio.h>
+#include <vector>
+#include <memory>
 
-#include "shapes/Triangle.h"
-#include "shapes/Rectangle.h"
 #include "Point2D.h"
+#include "shapes/RectangleDemo.h"
+#include "shapes/TriangleDemo.h"
+#include "shapes/CircleDemo.h"
+#include "myDrawingLib.h"
 
 int main(int argc, char *argv[])
 {
@@ -40,16 +44,24 @@ int main(int argc, char *argv[])
 	// creating and drawing objects. 2 milliseconds.
 	Sleep(2);
 
-//	Shape *tr1 = new TriangleDemo(100, 120, 180, new Point2D(200, 200));
-//	tr1->drow();
-//	if(tr1) delete tr1;
+	std::shared_ptr<Shape> tr1(new TriangleDemo(100, 120, 180, new Point2D(200, 200)));
+	tr1.get()->drow();
 
-	Shape *re1 = new RectangleDemo(80, 120, new Point2D(200,200));
-	re1->drow();
-	if(re1) delete re1;
+	std::shared_ptr<Shape> re1(new RectangleDemo(80, 120, new Point2D(200,200)));
+	re1.get()->drow();
 
-//	Rectangle
-
+	std::shared_ptr<Shape> ci1(new CircleDemo(50, 10, new Point2D(200, 200)));
+	ci1.get()->drow();
+//
+//	std::unique_ptr<Shape> ptr(tr1);
+//	std::shared_ptr<Shape> ptr2 = tr1;
+//
+//	std::vector<std::shared_ptr<Shape>> shapesVector;
+//	shapesVector.push_back(tr1);
+//	shapesVector.push_back(re1);
+//	shapesVector.push_back(ci1);
+//
+//	myDrawingLib::drawAllElements(shapesVector);
 
 
 	std::cout << "end test!" << std::endl;

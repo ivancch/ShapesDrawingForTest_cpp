@@ -26,7 +26,7 @@ public:
 	 * @param[in] a First side of the triangle.
 	 * @param[in] b Second side of the triangle.
 	 * @param[in] c Third side of the triangle.
-	 * @param[in] point1 Coordinates to start drawing the triangle.
+	 * @param[in] point Coordinates to start drawing the triangle.
 	 */
 	TriangleDemo (const float a, const float b, const float c, Point2D *point) :
 		Shape(point)
@@ -60,7 +60,7 @@ public:
 	 * Drawing a triangle from a given coordinate point.
 	 * First to the right, then up, then to the initial coordinates.
 	 *
-	 * The sides of the triangle are specified
+	 * The sides and coordinates of the triangle are set
 	 * in the constructor when the object is created.
 	 */
 	void drow() const override
@@ -94,9 +94,9 @@ public:
 	friend std::ostream& operator<<(std::ostream &out, const TriangleDemo &triangle)
 	{
 		return out << "Triangle( a=" << triangle.m_a
-				   << "b=" << triangle.m_b
-				   << "c=" << triangle.m_c
-				   << ")Coordinates" << triangle.getCoordinates();
+				   << " b=" << triangle.m_b
+				   << " c=" << triangle.m_c
+				   << " ) Coordinates" << triangle.getCoordinates();
 	}
 
 };

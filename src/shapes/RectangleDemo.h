@@ -19,6 +19,11 @@ private:
 	float m_a;
 	float m_b;
 public:
+	/**
+	 * @param[in] a First side of the rectangle.
+	 * @param[in] b Second side of the rectangle.
+	 * @param[in] point Coordinates to start drawing the rectangle.
+	 */
 	RectangleDemo(const float a, const float b, Point2D *point) :
 		Shape(point), m_a(a), m_b(b)
 	{
@@ -34,7 +39,7 @@ public:
 	 * Draw a rectangle from a given coordinate point. First to the right,
 	 * then up, then to the left, then to the original coordinates.
 	 *
-	 * The sides of the rectangle are set in
+	 * The sides and coordinates of the rectangle are set in
 	 * the constructor when the object is created.
 	 */
 	void drow() const override
@@ -65,8 +70,8 @@ public:
 	friend std::ostream& operator<<(std::ostream &out, const RectangleDemo &rectangle)
 	{
 		return out << "Rectangle( a=" << rectangle.m_a
-				   << "b=" << rectangle.m_b
-				   << ")Coordinates" << rectangle.getCoordinates();
+				   << " b=" << rectangle.m_b
+				   << " ) Coordinates" << rectangle.getCoordinates();
 	}
 
 
