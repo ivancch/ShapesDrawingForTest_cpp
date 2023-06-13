@@ -1,5 +1,4 @@
 
-
 #ifndef CIRCLE_H_
 #define CIRCLE_H_
 
@@ -49,9 +48,7 @@ public:
 			m_polygons = 5;
 		}
 		else
-		{
 			m_polygons = polygons;
-		}
 
 	}
 
@@ -69,7 +66,7 @@ public:
 	 * The sides and coordinates of the circle are
 	 * set in the constructor when the object is created.
 	 */
-	void drow() const override
+	void draw() const override
 	{
 		//Create context and pen.
 		myDrawingLib::Context context;
@@ -101,8 +98,6 @@ public:
 				   << " ) Coordinates" << circle.getCoordinates();
 	}
 
-
 };
-
 
 #endif /* CIRCLE_H_ */

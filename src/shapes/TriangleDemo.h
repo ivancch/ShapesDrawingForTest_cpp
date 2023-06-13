@@ -63,7 +63,7 @@ public:
 	 * The sides and coordinates of the triangle are set
 	 * in the constructor when the object is created.
 	 */
-	void drow() const override
+	void draw() const override
 	{
 		//Create context and pen.
 		myDrawingLib::Context context;

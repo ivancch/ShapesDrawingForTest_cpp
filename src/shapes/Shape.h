@@ -26,11 +26,13 @@ protected:
 public:
 	Point2D* getCoordinates() const { return m_coordinates; }
 	void setCoordinates(Point2D *coordinates) { m_coordinates = coordinates; }
+
 	/**
 	 * An abstract method for drawing geometric objects on the screen.
 	 * For each shape is defined differently.
 	 */
-	virtual void drow() const = 0;
+	virtual void draw() const = 0;
+
 	virtual ~Shape()
 	{
 		if (m_coordinates)

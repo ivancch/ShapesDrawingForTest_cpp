@@ -1,11 +1,13 @@
 
-
 #ifndef SHAPES_MYDRAWINGLIB_H_
 #define SHAPES_MYDRAWINGLIB_H_
 
 #include <windows.h>
 #include <vector>
+#include <memory>
 #include <cmath>
+
+
 
 /**
  * The definition of pi, since such a definition was not in my compiler.
@@ -13,27 +15,6 @@
 #ifndef M_PI
 #define M_PI (4*std::atan(1))
 #endif /* M_PI */
-
-
-
-
-
-
-
-
-
-
-#include <iostream>
-
-
-
-
-
-
-
-
-
-
 
 namespace myDrawingLib
 {
@@ -68,6 +49,8 @@ namespace myDrawingLib
 		virtual ~Context();
 	};
 
+
+
 	/**
 	 * The function iterates through all the elements of the vector
 	 * and calls the draw() function on each element.
@@ -77,11 +60,12 @@ namespace myDrawingLib
 	 * @tparam T type
 	 * @param vec Vector
 	 */
-
-
 	template<typename T>
-	void drawAllElements(const std::vector<T> &vec);
-
+	void drawAllElements(const std::vector<T> &vec)
+	{
+		for (const T &element : vec)
+			element.get()->draw();
+	}
 
 }
 

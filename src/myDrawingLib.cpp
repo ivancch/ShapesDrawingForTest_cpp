@@ -3,6 +3,9 @@
 #include <windows.h>
 #include "myDrawingLib.h"
 
+/**
+ * Constructor definition
+ */
 myDrawingLib::Context::Context()
 {
 	m_hwnd = GetConsoleWindow(); // Loading the handle of the current window
@@ -11,7 +14,9 @@ myDrawingLib::Context::Context()
 	SelectObject(m_hdc, m_pen);  // Putting the white pen into the drawing context
 }
 
-
+/**
+ * Destructor definition
+ */
 myDrawingLib::Context::~Context()
 {
 	ReleaseDC(m_hwnd, m_hdc);    // Release the drawing context
@@ -24,14 +29,3 @@ const HDC& myDrawingLib::Context::getHDC() const
 }
 
 
-#include <iostream>
-
-template<typename T>
-void myDrawingLib::drawAllElements(const std::vector<T> &vec)
-{
-	for (const T &element : vec)
-	{
-		std::cout << *element << '\n';
-	}
-		std::cout << '\n';
-}
