@@ -41,8 +41,8 @@ typedef std::shared_ptr<Shape> ShapePtr;
 int main(int argc, char *argv[])
 {
 	// Putting the current thread to sleep to fully load the console before
-	// creating and drawing objects. 2 milliseconds.
-	Sleep(2);
+	// creating and drawing objects. 10 milliseconds.
+	Sleep(10);
 
 	// Сreating variables shapes and outputting information about them to the console.
 	ShapePtr tr1(new TriangleDemo(50, 70, 100, new Point2D(10, 300)));
