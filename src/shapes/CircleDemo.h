@@ -88,16 +88,38 @@ public:
 		}
 	}
 
+private:
 	/**
 	 * Operator overload function "<<"
 	 * to send Circle to the output stream.
 	 */
-	friend std::ostream& operator<<(std::ostream &out, const CircleDemo &circle)
+	virtual std::ostream& outputStream(std::ostream &out)
 	{
-		return out << "Rectangle( radius=" << circle.m_radius
-				   << " ) Coordinates" << circle.getCoordinates();
+		return out << "Circle( radius=" << this->m_radius
+    			   << " ), Coordinates" << *this->getCoordinates();
 	}
-
 };
 
 #endif /* CIRCLE_H_ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

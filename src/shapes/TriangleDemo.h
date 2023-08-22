@@ -86,17 +86,17 @@ public:
 	{
 	}
 
-
+private:
 	/**
 	 * Operator overload function "<<"
 	 * to send Triangle to the output stream.
 	 */
-	friend std::ostream& operator<<(std::ostream &out, const TriangleDemo &triangle)
+	virtual std::ostream& outputStream(std::ostream &out)
 	{
-		return out << "Triangle( a=" << triangle.m_a
-				   << " b=" << triangle.m_b
-				   << " c=" << triangle.m_c
-				   << " ) Coordinates" << triangle.getCoordinates();
+		return out << "Triangle( a=" << this->m_a
+				   << " b=" << this->m_b
+				   << " c=" << this->m_c
+				   << " ) Coordinates" << *this->getCoordinates();
 	}
 
 };

@@ -9,6 +9,8 @@
 /**
  * Interface class "Shape" for drawing geometric shapes.
  */
+
+
 class Shape
 {
 private:
@@ -43,11 +45,33 @@ public:
 	 * Operator overload function "<<"
 	 * to send Point2D to the output stream.
 	 */
-	friend std::ostream& operator<<(std::ostream &out, const Shape &shape)
+	friend std::ostream& operator<<(std::ostream &out, Shape &shape)
 	{
-		return out << "coordinates " << *shape.m_coordinates;
+		return shape.outputStream(out);
 	}
+private:
+	virtual std::ostream& outputStream(std::ostream &out)
+	{
+		return out  << "coordinates " << *this->m_coordinates;;
+	}
+
 };
 
 
 #endif /* SHAPE_H_ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

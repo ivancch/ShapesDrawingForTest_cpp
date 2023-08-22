@@ -62,18 +62,17 @@ public:
 	virtual ~RectangleDemo() override
 	{
 	}
-	
+private:
 	/**
 	 * Operator overload function "<<"
 	 * to send Rectangle to the output stream.
 	 */
-	friend std::ostream& operator<<(std::ostream &out, const RectangleDemo &rectangle)
+	virtual std::ostream& outputStream(std::ostream &out)
 	{
-		return out << "Rectangle( a=" << rectangle.m_a
-				   << " b=" << rectangle.m_b
-				   << " ) Coordinates" << rectangle.getCoordinates();
+		return out << "Rectangle( a=" << this->m_a
+				   << " b=" << this->m_b
+				   << " ) Coordinates" << *this->getCoordinates();
 	}
-
 
 };
 
