@@ -36,6 +36,8 @@
 #include "shapes/CircleDemo.h"
 #include "myDrawingLib.h"
 
+
+
 typedef std::shared_ptr<Shape> ShapePtr;
 
 int main(int argc, char *argv[])
@@ -44,31 +46,22 @@ int main(int argc, char *argv[])
 	// creating and drawing objects. 10 milliseconds.
 	Sleep(10);
 
-	// Сreating variables shapes and outputting information about them to the console.
-	ShapePtr tr1(new TriangleDemo(50, 70, 100, new Point2D(10, 300)));
-	std::cout << "Created triangle(50, 70, 100) " << *tr1 << std::endl;
-	ShapePtr tr2(new TriangleDemo(100, 100, 141.43, new Point2D(80, 300)));
-	std::cout << "Created triangle(100, 100, 141.43) " << *tr2 << std::endl;
-	ShapePtr tr3(new TriangleDemo(70, 100, 100, new Point2D(200, 300)));
-	std::cout << "Created triangle(70, 100, 100) " << *tr2 << std::endl;
-
-	ShapePtr re1(new RectangleDemo(60, 120, new Point2D(290,300)));
-	std::cout << "Created rectangle(60, 120) " << *re1 << std::endl;
-	ShapePtr re2(new RectangleDemo(80, 80, new Point2D(370,300)));
-	std::cout << "Created rectangle(80, 80) " << *re2 << std::endl;
-
-	ShapePtr ci1(new CircleDemo(60, new Point2D(520, 240)));
-	std::cout << "Created circle(radius 60, polygons default(10)) " << *ci1 << std::endl;
-	ShapePtr ci2(new CircleDemo(70, 50, new Point2D(660, 230)));
-	std::cout << "Created circle(radius 70, polygons 50) " << *ci2 << std::endl;
-
-
 	// Creating a vector of pointers to Shapes
-	std::vector<ShapePtr> shapesVector = {tr1, tr2, tr3, re1, re2, ci1, ci2};
+	std::vector<ShapePtr> shapesVector{};
+	shapesVector.push_back(ShapePtr(new TriangleDemo(50, 70, 100, new Point2D(10, 300))));
+	shapesVector.push_back(ShapePtr(new TriangleDemo(100, 100, 141.43, new Point2D(80, 300))));
+	shapesVector.push_back(ShapePtr(new TriangleDemo(70, 100, 100, new Point2D(200, 300))));
+	shapesVector.push_back(ShapePtr(new RectangleDemo(60, 120, new Point2D(290,300))));
+	shapesVector.push_back(ShapePtr(new RectangleDemo(80, 80, new Point2D(370,300))));
+	shapesVector.push_back(ShapePtr(new CircleDemo(60, new Point2D(520, 240))));
+	shapesVector.push_back(ShapePtr(new CircleDemo(70, 50, new Point2D(660, 230))));
+
+	// Outputting information about shapes to the console.
+	for (size_t index = 0; index < shapesVector.size(); index++)
+			std::cout << "Created " << *shapesVector[index] << std::endl;
 
 	// Drawing to console.
 	myDrawingLib::drawAllElements(shapesVector);
-
 
 	_getch();
 
