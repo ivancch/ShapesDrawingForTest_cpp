@@ -96,7 +96,8 @@ private:
 	virtual std::ostream& outputStream(std::ostream &out)
 	{
 		return out << "Circle( radius=" << this->m_radius
-    			   << " polygons=" << this->m_polygons << " ), Coordinates" << *this->getCoordinates();
+    			   << " polygons=" << this->m_polygons
+				   << " ), Coordinates" << *this->getCoordinates();
 	}
 };
 
